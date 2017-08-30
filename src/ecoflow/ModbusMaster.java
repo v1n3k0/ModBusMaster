@@ -1,5 +1,9 @@
 package ecoflow;
 
+import modBus.EntradaRegistro;
+import modBus.Conexao;
+import modBus.Boleano;
+import modBus.Registro;
 import net.wimpi.modbus.Modbus;
 import net.wimpi.modbus.net.TCPMasterConnection;
 import net.wimpi.modbus.util.BitVector;

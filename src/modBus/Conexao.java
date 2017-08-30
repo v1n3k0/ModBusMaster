@@ -1,4 +1,4 @@
-package ecoflow;
+package modBus;
 
 import java.net.InetAddress;
 import net.wimpi.modbus.net.TCPMasterConnection;

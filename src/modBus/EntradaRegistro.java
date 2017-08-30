@@ -1,4 +1,4 @@
-package ecoflow;
+package modBus;
 
 import net.wimpi.modbus.io.ModbusTCPTransaction;
 import net.wimpi.modbus.msg.ReadInputRegistersRequest;
