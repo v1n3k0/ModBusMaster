@@ -27,13 +27,13 @@ public class ModbusMaster {
         conexao = Conexao.Connection("127.0.0.1", Modbus.DEFAULT_PORT);
         
         //Escrever no registro unica vez
-        System.out.println( Registro.escreverUnicoRegistro(conexao, ref, 250) );
+        System.out.println( Registro.escrever(conexao, ref, 250) );
         
         //Escrever multiplos registros
-        System.out.println( Registro.escreverMultiplosRegistros(conexao, ref, valores) );
+        System.out.println( Registro.escrever(conexao, ref, valores) );
                 
         //Ler os registros
-        respostas = Registro.lerMultiplosRegistros(conexao, ref, count);
+        respostas = Registro.ler(conexao, ref, count);
         for(int i = 0; i < count; i++){
             System.out.println( respostas[i] );
         }
@@ -48,7 +48,7 @@ public class ModbusMaster {
         System.out.println( SaidaDiscreta.escrever(conexao, ref, false) );
         
         //Escrever multiplos boleanos
-        System.out.println( SaidaDiscreta.escreverMultiplos(conexao, ref, bitVectorValor) );
+        System.out.println( SaidaDiscreta.escrever(conexao, ref, bitVectorValor) );
         System.out.println( bitVectorValor.toString() );
         
         //Ler boleanos

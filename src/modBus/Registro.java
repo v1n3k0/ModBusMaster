@@ -13,7 +13,7 @@ import net.wimpi.modbus.procimg.SimpleRegister;
 
 public class Registro {
     
-    public static boolean escreverUnicoRegistro(TCPMasterConnection con, int ref, int valor){
+    public static boolean escrever(TCPMasterConnection con, int ref, int valor){
         /* Variáveis ​​para armazenar os parâmetros 
         ref = A referência; Desloca onde começar a ler
         valor = dados a ser escrito no registro*/
@@ -52,7 +52,7 @@ public class Registro {
         
     }
     
-    public static boolean escreverMultiplosRegistros(TCPMasterConnection con, int ref, int[] valores){
+    public static boolean escrever(TCPMasterConnection con, int ref, int[] valores){
             /* Variáveis ​​para armazenar os parâmetros 
             ref = A referência; Desloca onde começar a ler*/
         
@@ -95,7 +95,7 @@ public class Registro {
         
     }
     
-    public static int[] lerMultiplosRegistros(TCPMasterConnection con, int ref, int count){
+    public static int[] ler(TCPMasterConnection con, int ref, int count){
             /* Variáveis ​​para armazenar os parâmetros 
             ref = A referência; Desloca onde começar a ler
             count = O número de DI's para ler

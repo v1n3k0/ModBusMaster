@@ -49,7 +49,7 @@ public class SaidaDiscreta {
         
     }
     
-    public static boolean escreverMultiplos(TCPMasterConnection con, int ref, BitVector valor){
+    public static boolean escrever(TCPMasterConnection con, int ref, BitVector valor){
         
         try {
             /* As instâncias importantes das classes mencionadas anteriormente */
