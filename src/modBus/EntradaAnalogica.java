@@ -5,9 +5,9 @@ import net.wimpi.modbus.msg.ReadInputRegistersRequest;
 import net.wimpi.modbus.msg.ReadInputRegistersResponse;
 import net.wimpi.modbus.net.TCPMasterConnection;
 
-public class EntradaRegistro {
+public class EntradaAnalogica {
     
-    public int[] lerEntradaRegistros(TCPMasterConnection con, int ref, int count){
+    public static int[] ler(TCPMasterConnection con, int ref, int count){
         
         //Vetor de resposta
         int[] valores = new int[count];

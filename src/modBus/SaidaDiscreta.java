@@ -10,9 +10,9 @@ import net.wimpi.modbus.msg.WriteMultipleCoilsResponse;
 import net.wimpi.modbus.net.TCPMasterConnection;
 import net.wimpi.modbus.util.BitVector;
 
-public class Boleano {
+public class SaidaDiscreta {
     
-    public boolean escreverBoleano(TCPMasterConnection con, int ref, boolean valor){
+    public static boolean escrever(TCPMasterConnection con, int ref, boolean valor){
         
         try {
             
@@ -49,7 +49,7 @@ public class Boleano {
         
     }
     
-    public boolean escreverMultiplosBoleanos(TCPMasterConnection con, int ref, BitVector valor){
+    public static boolean escreverMultiplos(TCPMasterConnection con, int ref, BitVector valor){
         
         try {
             /* As instâncias importantes das classes mencionadas anteriormente */
@@ -85,7 +85,7 @@ public class Boleano {
         
     }
     
-    public BitVector lerBoleano(TCPMasterConnection con, int ref, int count){
+    public static BitVector ler(TCPMasterConnection con, int ref, int count){
         
         try {
             
