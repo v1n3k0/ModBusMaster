@@ -6,13 +6,10 @@ import net.wimpi.modbus.msg.ReadInputDiscretesResponse;
 import net.wimpi.modbus.net.TCPMasterConnection;
 import net.wimpi.modbus.util.BitVector;
 
-public class EntradaDiscreta {
+public class EntradaDigital {
     
     public static BitVector ler(TCPMasterConnection con, int ref, int count){
-        
-        //Vetor de resposta
-        int[] valores = new int[count];
-        
+                
         try {            
             /* As instâncias importantes das classes mencionadas anteriormente */
             ModbusTCPTransaction trans = null; //A transação

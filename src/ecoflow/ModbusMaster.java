@@ -2,8 +2,8 @@ package ecoflow;
 
 import modBus.EntradaAnalogica;
 import modBus.Conexao;
-import modBus.EntradaDiscreta;
-import modBus.SaidaDiscreta;
+import modBus.EntradaDigital;
+import modBus.Solenoide;
 import modBus.Registro;
 import net.wimpi.modbus.Modbus;
 import net.wimpi.modbus.net.TCPMasterConnection;
