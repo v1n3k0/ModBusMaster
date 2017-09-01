@@ -36,13 +36,13 @@ public class SaidaDiscreta {
             if( res.getReference() == ref && res.getCoil() == valor ){
                 return true;
             }else{
-                System.out.println("Erro ao escrever no unico boleano! referencia ou valor não corresponde.");
+                System.out.println("Erro ao escrever no unica saída discreta! referencia ou valor não corresponde.");
                 return false; 
             }
             
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Erro ao escrever no unico boaleano!");
+            System.out.println("Erro ao escrever no unica saída discreta!");
             
             return false;
         }
@@ -72,13 +72,13 @@ public class SaidaDiscreta {
             if( res.getReference() == ref && res.getBitCount() == valor.size() ){
                 return true;
             }else{
-                System.out.println("Erro ao escrever nos multiplos boleanos! referencia ou quantidade valores não corresponde.");
+                System.out.println("Erro ao escrever nos multiplas saídas discretas! referencia ou quantidade valores não corresponde.");
                 return false;
             }
             
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Erro ao escrever nos multiplos boleanos!");
+            System.out.println("Erro ao escrever nos multiplas saídas discretas!");
             
             return false;
         }
@@ -111,7 +111,7 @@ public class SaidaDiscreta {
             
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Erro ao ler boleano!");
+            System.out.println("Erro ao ler saídas discretas!");
             
             return null;
         }

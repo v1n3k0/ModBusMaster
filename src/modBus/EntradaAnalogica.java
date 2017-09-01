@@ -40,7 +40,7 @@ public class EntradaAnalogica {
             
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Erro ao ler multiplos entrada de registro!");
+            System.out.println("Erro ao ler multiplas entradas analógicas!");
             
             return null;
         }
