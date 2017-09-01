@@ -25,7 +25,7 @@ public class ModbusMaster {
                 
         //Criar a conexão
         TCPMasterConnection conexao;
-        conexao = Conexao.Connection("127.0.0.1", Modbus.DEFAULT_PORT);
+        conexao = Conexao.configurar("127.0.0.1", Modbus.DEFAULT_PORT);
         
         //Escrever no registro unica vez
         //System.out.println( Registro.escrever(conexao, ref, 250) );

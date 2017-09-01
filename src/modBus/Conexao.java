@@ -5,7 +5,7 @@ import net.wimpi.modbus.net.TCPMasterConnection;
 
 public class Conexao {
     
-    public static TCPMasterConnection Connection(String ip, int porta) throws Exception{
+    public static TCPMasterConnection configurar(String ip, int porta) throws Exception{
                     
         try {    
             /* As instâncias importantes das classes mencionadas anteriormente */
