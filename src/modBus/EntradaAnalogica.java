@@ -4,13 +4,11 @@ import net.wimpi.modbus.io.ModbusTCPTransaction;
 import net.wimpi.modbus.msg.ReadInputRegistersRequest;
 import net.wimpi.modbus.msg.ReadInputRegistersResponse;
 import net.wimpi.modbus.net.TCPMasterConnection;
+import net.wimpi.modbus.procimg.InputRegister;
 
 public class EntradaAnalogica {
     
-    public static int[] ler(TCPMasterConnection con, int ref, int count){
-        
-        //Vetor de resposta
-        int[] valores = new int[count];
+    public static InputRegister[] ler(TCPMasterConnection con, int ref, int count){
         
         try {            
             /* As instâncias importantes das classes mencionadas anteriormente */
@@ -18,25 +16,21 @@ public class EntradaAnalogica {
             ReadInputRegistersRequest req = null; //o pedido
             ReadInputRegistersResponse res = null; //a resposta
             
-            //3. Prepare o pedido
+            //Prepare o pedido
             req = new ReadInputRegistersRequest(ref, count);
             
-            //4. Prepare a transação
+            //Prepare a transação
             trans = new ModbusTCPTransaction(con);
             trans.setRequest(req);
             
-            //5. Execute os tempos de repetição da transação
+            //Execute a transação
             trans.execute();
             
             //Retorno dos valores solicitados
             int k = 0;
             res = (ReadInputRegistersResponse) trans.getResponse();
-            do {
-                valores[k] = res.getRegisterValue(k);
-                k++;
-            } while (k < count);
             
-            return valores;
+            return res.getRegisters();
             
         } catch (Exception e) {
             e.printStackTrace();
