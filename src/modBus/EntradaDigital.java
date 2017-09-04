@@ -12,18 +12,18 @@ public class EntradaDigital {
                 
         try {            
             /* As instâncias importantes das classes mencionadas anteriormente */
-            ModbusTCPTransaction trans = null; //A transação
-            ReadInputDiscretesRequest req = null; //o pedido
-            ReadInputDiscretesResponse res = null; //a resposta
+            ModbusTCPTransaction        trans = null; //A transação
+            ReadInputDiscretesRequest   req = null; //o pedido
+            ReadInputDiscretesResponse  res = null; //a resposta
             
-            //3. Prepare o pedido
+            //Prepare o pedido
             req = new ReadInputDiscretesRequest(ref, count);
             
-            //4. Prepare a transação
+            //Prepare a transação
             trans = new ModbusTCPTransaction(con);
             trans.setRequest(req);
             
-            //5. Execute os tempos de repetição da transação
+            //Execute os tempos de repetição da transação
             trans.execute();
             
             //Retorno dos valores solicitados

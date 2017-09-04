@@ -17,18 +17,18 @@ public class Solenoide {
         try {
             
              /* As instâncias importantes das classes mencionadas anteriormente */
-            ModbusTCPTransaction trans = null; //A transação
-            WriteCoilRequest req = null; //o pedido
-            WriteCoilResponse res = null; //a resposta
+            ModbusTCPTransaction    trans = null; //A transação
+            WriteCoilRequest        req = null; //o pedido
+            WriteCoilResponse       res = null; //a resposta
             
-            //3. Prepare o pedido
+            //Prepare o pedido
             req = new WriteCoilRequest(ref, valor );
 
-            //4. Prepare a transação
+            //Prepare a transação
             trans = new ModbusTCPTransaction(con);
             trans.setRequest(req);
             
-            //5. Execute os tempos de repetição da transação
+            //Execute os tempos de repetição da transação
             trans.execute();
             
             //Verifica se escreveu com sucesso
@@ -53,18 +53,18 @@ public class Solenoide {
         
         try {
             /* As instâncias importantes das classes mencionadas anteriormente */
-            ModbusTCPTransaction trans = null; //A transação
-            WriteMultipleCoilsRequest req = null; //o pedido
-            WriteMultipleCoilsResponse res = null; //a resposta
+            ModbusTCPTransaction        trans = null; //A transação
+            WriteMultipleCoilsRequest   req = null; //o pedido
+            WriteMultipleCoilsResponse  res = null; //a resposta
             
-            //3. Prepare o pedido
+            //Prepare o pedido
             req = new WriteMultipleCoilsRequest(ref, valor);
             
-            //4. Prepare a transação
+            //Prepare a transação
             trans = new ModbusTCPTransaction(con);
             trans.setRequest(req);
             
-            //5. Execute os tempos de repetição da transação
+            //Execute os tempos de repetição da transação
             trans.execute();
             
             //Verifica se escreveu com sucesso
@@ -90,18 +90,18 @@ public class Solenoide {
         try {
             
             /* As instâncias importantes das classes mencionadas anteriormente */
-            ModbusTCPTransaction trans = null; //A transação
-            ReadCoilsRequest req = null; //o pedido
-            ReadCoilsResponse res = null; //a resposta
+            ModbusTCPTransaction    trans = null; //A transação
+            ReadCoilsRequest        req = null; //o pedido
+            ReadCoilsResponse       res = null; //a resposta
             
-            //3. Prepare o pedido
+            //Prepare o pedido
             req = new ReadCoilsRequest(ref, count);
             
-            //4. Prepare a transação
+            //Prepare a transação
             trans = new ModbusTCPTransaction(con);
             trans.setRequest(req);
             
-            //5. Execute os tempos de repetição da transação
+            //Execute os tempos de repetição da transação
             trans.execute();
             
             //Retorno dos valores solicitados

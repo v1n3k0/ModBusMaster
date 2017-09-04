@@ -35,29 +35,29 @@ public class ModbusMaster {
         conexao = Conexao.configurar("127.0.0.1", Modbus.DEFAULT_PORT);
         
         //Escrever no registro unica vez
-        //System.out.println( Registro.escrever(conexao, ref, 250) );
+        System.out.println( Registro.escrever(conexao, ref, 250) );
         
         //Escrever multiplos registros
-        //System.out.println( Registro.escrever(conexao, ref, valores) );
+        System.out.println( Registro.escrever(conexao, ref, valores) );
                 
         //Ler os registros
-        /*respostas = Registro.ler(conexao, ref, count);
+        respostas = Registro.ler(conexao, ref, count);
         for(int i = 0; i < count; i++){
             System.out.println( respostas[i] );
-        }*/
+        }
         
         //Escrever Coil
-        //System.out.println( SaidaDiscreta.escrever(conexao, ref, true) );
+        System.out.println( Solenoide.escrever(conexao, ref, true) );
         
         //Escrever multiplos Coil
-        //System.out.println( SaidaDiscreta.escrever(conexao, ref, bitVectorValor) );
-        //System.out.println( bitVectorValor.toString() );
+        System.out.println( Solenoide.escrever(conexao, ref, bitVectorValor) );
+        System.out.println( bitVectorValor.toString() );
         
         //Ler Coil
-        /*bitVector = SaidaDiscreta.ler(conexao, ref, count);
+        bitVector = Solenoide.ler(conexao, ref, count);
         for(int i = 0; i < count; i++){
             System.out.println(bitVector.getBit(i) );
-        }*/
+        }
         
         //Ler as entrada Analogica
         inputRegisters = EntradaAnalogica.ler(conexao, ref, count);
@@ -66,10 +66,16 @@ public class ModbusMaster {
         }
         
         //Ler as entradas Digitais
-        /*bitVector = EntradaDiscreta.ler(conexao, ref, count);
+        bitVector = EntradaDigital.ler(conexao, ref, count);
         for(int i = 0; i < count; i++){
             System.out.println(bitVector.getBit(i) );
-        }*/
+        }
+        
+        byte[] bytes = bitVector.getBytes();
+        for(int i = 0; i < bytes.length; i++){
+            Byte bite = new Byte(bytes[i]);
+            System.out.println( bite.toString());
+        }
         
         //Fechar conexão
         conexao.close();

@@ -20,18 +20,18 @@ public class Registro {
         
         try {
             /* As instâncias importantes das classes mencionadas anteriormente */
-            ModbusTCPTransaction trans = null; //A transação
-            WriteSingleRegisterRequest req = null; //o pedido
+            ModbusTCPTransaction        trans = null; //A transação
+            WriteSingleRegisterRequest  req = null; //o pedido
             WriteSingleRegisterResponse res = null; //a resposta
             
-            //3. Prepare o pedido
+            //Prepare o pedido
             req = new WriteSingleRegisterRequest(ref, new SimpleRegister(valor) );
 
-            //4. Prepare a transação
+            //Prepare a transação
             trans = new ModbusTCPTransaction(con);
             trans.setRequest(req);
             
-            //5. Execute os tempos de repetição da transação
+            //Execute os tempos de repetição da transação
             trans.execute();
             
             //Verifica se escreveu com sucesso
@@ -58,11 +58,11 @@ public class Registro {
         
         try {
             /* As instâncias importantes das classes mencionadas anteriormente */
-            ModbusTCPTransaction trans = null; //A transação
-            WriteMultipleRegistersRequest req = null; //o pedido
-            WriteMultipleRegistersResponse res = null; //a resposta
+            ModbusTCPTransaction            trans = null; //A transação
+            WriteMultipleRegistersRequest   req = null; //o pedido
+            WriteMultipleRegistersResponse  res = null; //a resposta
             
-            //3. Prepare o pedido
+            //Prepare o pedido
             int sizeValores = valores.length;            
             Register [] reg = new Register[sizeValores];
             for(int i = 0; i < sizeValores; i++){
@@ -70,11 +70,11 @@ public class Registro {
             }
             req = new WriteMultipleRegistersRequest(ref, reg);
             
-            //4. Prepare a transação
+            //Prepare a transação
             trans = new ModbusTCPTransaction(con);
             trans.setRequest(req);
             
-            //5. Execute os tempos de repetição da transação
+            //Execute os tempos de repetição da transação
             trans.execute();
             
             //Verifica se escreveu com sucesso
@@ -106,18 +106,18 @@ public class Registro {
         
         try {            
             /* As instâncias importantes das classes mencionadas anteriormente */
-            ModbusTCPTransaction trans = null; //A transação
-            ReadMultipleRegistersRequest req = null; //o pedido
-            ReadMultipleRegistersResponse res = null; //a resposta
+            ModbusTCPTransaction            trans = null; //A transação
+            ReadMultipleRegistersRequest    req = null; //o pedido
+            ReadMultipleRegistersResponse   res = null; //a resposta
             
-            //3. Prepare o pedido
+            //Prepare o pedido
             req = new ReadMultipleRegistersRequest(ref, count);
             
-            //4. Prepare a transação
+            //Prepare a transação
             trans = new ModbusTCPTransaction(con);
             trans.setRequest(req);
             
-            //5. Execute os tempos de repetição da transação
+            //Execute os tempos de repetição da transação
             trans.execute();
             
             //Retorno dos valores solicitados

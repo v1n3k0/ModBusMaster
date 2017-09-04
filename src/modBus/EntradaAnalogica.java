@@ -12,9 +12,9 @@ public class EntradaAnalogica {
         
         try {            
             /* As instâncias importantes das classes mencionadas anteriormente */
-            ModbusTCPTransaction trans = null; //A transação
-            ReadInputRegistersRequest req = null; //o pedido
-            ReadInputRegistersResponse res = null; //a resposta
+            ModbusTCPTransaction        trans = null; //A transação
+            ReadInputRegistersRequest   req = null; //o pedido
+            ReadInputRegistersResponse  res = null; //a resposta
             
             //Prepare o pedido
             req = new ReadInputRegistersRequest(ref, count);
